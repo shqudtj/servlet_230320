@@ -57,18 +57,23 @@
 	};
 	list.add(map);
 %>
-	<div class="d-flex container">
 		<%
 			int id = Integer.parseInt(request.getParameter("id"));
 			for (Map<String, Object> books : list) {
-				if (books.get("id").equals(id)) {
+				if (books.get("id").equals(id)) { // (equals(?) 가 int일때는 == 비교 가능) 근데 여기서 앞의 값이 object이므로(int)books.get("id")를 붙여야함
 							
 		%>
-		<div><img src="<%= books.get("image") %>" width="300"></div>
-		<div>
-			<div class="display-1"><b><%= books.get("title") %></b></div>
-			<div class="display-2 text-info"><%= books.get("author") %></div>
-			<div class="display-3 text-secondary"><%= books.get("publisher") %></div>
+	<div class="container">
+		<div class="d-flex" >
+			<div>
+				<img src="<%= books.get("image") %>" alt="표지" width="300">
+			</div>
+			<div>
+				<span class="display-1 font-weight-bold d-block"><%= books.get("title") %></span> 
+				<!-- class="d-block" => 블록으로 설정하여 div 효과를 낼 수 있음 -->
+				<span class="display-3 text-info d-block"><%= books.get("author") %></span>
+				<div class="display-4 text-secondary d-block"><%= books.get("publisher") %></div>
+			</div>
 		</div>
 		<%
 				}
