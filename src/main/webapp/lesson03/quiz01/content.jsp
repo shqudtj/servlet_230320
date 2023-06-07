@@ -148,6 +148,10 @@ list.add(map);
 		<tbody>
 			<%
 			String category = request.getParameter("category");
+			// String url = request.getRequestURI();
+			// StringBuffer url2 = request.getRequestURL();
+			// String last = url2.toString();
+			
 			for (Map<String, String> channel : list) {
 				
 				if (channel.get("category").equals(category)) {
@@ -165,9 +169,20 @@ list.add(map);
 				<td><%=channel.get("name")%></td>
 				<td><%=channel.get("category")%></td>
 			</tr>
+			
 			<%
-				} else if (category == null) {
+				//} else  {
 					
+			%>
+			<!-- <tr>
+				<td><%=channel.get("ch")%></td>
+				<td><%=channel.get("name")%></td>
+				<td><%=channel.get("category")%></td>
+			</tr>  -->
+			
+			
+			
+			<%
 				}
 
 			}
