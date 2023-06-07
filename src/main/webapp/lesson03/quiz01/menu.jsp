@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <nav class="bg-danger menu d-flex algin-items-center">
 	<ul class="nav nav-fill w-100">
-		<li class="nav-item"><a href="/lesson03/quiz01/channel.jsp?category=전체" class="nav-link text-white">전체</a></li>
+		<li class="nav-item"><a href="/lesson03/quiz01/channel.jsp" class="nav-link text-white">전체</a></li>
 		<li class="nav-item"><a href="/lesson03/quiz01/channel.jsp?category=지상파" class="nav-link text-white">지상파</a></li>
 		<li class="nav-item"><a href="/lesson03/quiz01/channel.jsp?category=드라마" class="nav-link text-white">드라마</a></li>
 		<li class="nav-item"><a href="/lesson03/quiz01/channel.jsp?category=예능" class="nav-link text-white">예능</a></li>

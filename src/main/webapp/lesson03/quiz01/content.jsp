@@ -154,34 +154,13 @@ list.add(map);
 			
 			for (Map<String, String> channel : list) {
 				
-				if (channel.get("category").equals(category)) {
+				if (category == null || channel.get("category").equals(category)) {
 			%>
 			<tr>
 				<td><%=channel.get("ch")%></td>
 				<td><%=channel.get("name")%></td>
 				<td><%=channel.get("category")%></td>
-			</tr>
-			<%
-				} else if (category.equals("전체")) {
-			%>
-			<tr>
-				<td><%=channel.get("ch")%></td>
-				<td><%=channel.get("name")%></td>
-				<td><%=channel.get("category")%></td>
-			</tr>
-			
-			<%
-				//} else  {
-					
-			%>
-			<!-- <tr>
-				<td><%=channel.get("ch")%></td>
-				<td><%=channel.get("name")%></td>
-				<td><%=channel.get("category")%></td>
-			</tr>  -->
-			
-			
-			
+			</tr>			
 			<%
 				}
 

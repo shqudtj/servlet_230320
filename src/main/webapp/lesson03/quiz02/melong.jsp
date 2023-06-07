@@ -15,6 +15,7 @@
 	header {height:40px}
 	nav {height:40px}
 	.contents {}
+	.music_info{color:#999, font-size:12px}
 </style>
 </head>
 <body>
@@ -96,72 +97,24 @@
     musicInfo.put("composer", "아이유,이종훈,이채규");
     musicInfo.put("lyricist", "아이유");
     musicList.add(musicInfo);
+    
+    int mints = (int)(musicInfo.get("time")) / 60;
+    int sec = (int)(musicInfo.get("time")) % 60;
+    
+    
+    String title = request.getParameter("title");
+    String search = request.getParameter("search");
 %>
 
 
 	<div id="wrap" class="container">
-		<header class="d-flex">
-			<div class="mr-3 col-2">
-				<a href="#" class=" text-success"><h2>Melong</h2></a>
-			</div>
-			<div class="d-flex col-5">
-				<input type="text" class="form-control">
-				<button type="subit" class="btn form-controll btn-primary text-white col-2">검색</button>
-			</div>
-		</header>
-		<nav class="">
-			<ul class="nav">
-				<li class="nav-item"><a href="#" class="nav-link">멜롱챠트</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">최신음악</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">장르음악</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">멜롱DJ</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">뮤직어워드</a></li>
-			</ul>
-		</nav>
-		<section class="contents">
-			<div class="border border-success">
-				<div class="d-flex p-3">
-					<div class="">
-						<img src="<%= artistInfo.get("photo") %>" alt="이미지" width="200">
-					</div>
-					<div class="ml-2">
-						<div><h3><%= artistInfo.get("name") %></h3></div>
-						<div><%= artistInfo.get("agency") %></div>
-						<div><%= artistInfo.get("debute") %> 데뷔</div>
-					</div>
-				</div>
-			</div>
-			<div class="mt-3"><h3>곡 목록</h3></div>
-			<table class="table text-center">
-				<thead>
-					<tr>
-						<th>no</th>
-						<th>제목</th>
-						<th>앨범</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%
-						
-					for (Map<String, Object> musics : musicList) {
-						
-					
-						
-					%>
-				
-					<tr>
-						<td><%= musics.get("id") %></td>
-						<td><a href="#"><%= musics.get("title") %></a></td>
-						<td><%= musics.get("album") %></td>
-					</tr>
-					<%
-					}
-					%>
-					
-				</tbody>
-			</table>
-		</section>
-		<footer><hr>Copyright © marondal 2021</footer>
+		<jsp:include page="header.jsp" />
+		<jsp:include page="menu.jsp" />
+		<jsp:include page="content1.jsp" />
+		<jsp:include page="footer.jsp" />
+		
+		
+		
 		
 	</div>
 </body>
