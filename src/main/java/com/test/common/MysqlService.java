@@ -11,7 +11,7 @@ public class MysqlService {
 	private static MysqlService mysqlService = null;
 	
 	// 도메인 뒤에 접속할 데이터베이스명까지 넣는다.
-	private String url = "jdbc:mysql://localhost:3306/test_230320";
+	private String url = "jdbc:mysql://localhost:3306/test";
 	private String id = "root";
 	private String pw = "root";
 	
